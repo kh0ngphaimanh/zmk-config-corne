@@ -56,10 +56,10 @@
 
             display-name = "QWERTY";
             bindings = <
-&sl 4        &kp Q  &kp W  &kp E       &kp R      &kp T        &kp Y            &kp U               &kp I      &kp O    &kp P           &caps_word
-&key_repeat  &kp A  &kp S  &kp D       &kp F      &kp G        &kp H            &kp J               &kp K      &kp L    &kp UNDERSCORE  &key_repeat
-&sk LSHFT    &kp Z  &kp X  &kp C       &kp V      &kp B        &kp N            &kp M               &kp COMMA  &kp DOT  &kp FSLH        &sk RIGHT_SHIFT
-                           &kp DELETE  &kp SPACE  &lt 2 TAB    &lt 1 BACKSPACE  &mt LEFT_WIN ENTER  &sk LCTRL
+&sl 4        &kp Q  &kp W  &kp E       &kp R        &kp T        &kp Y            &kp U               &kp I      &kp O    &kp P           &caps_word
+&key_repeat  &kp A  &kp S  &kp D       &kp F        &kp G        &kp H            &kp J               &kp K      &kp L    &kp UNDERSCORE  &key_repeat
+&sk LSHFT    &kp Z  &kp X  &kp C       &kp V        &kp B        &kp N            &kp M               &kp COMMA  &kp DOT  &kp FSLH        &sk RIGHT_SHIFT
+                           &kp DELETE  &lt 3 SPACE  &lt 2 TAB    &lt 1 BACKSPACE  &mt LEFT_WIN ENTER  &sk LCTRL
             >;
 
             label = "QWERT";
@@ -67,10 +67,10 @@
 
         navigation_layer {
             bindings = <
-&none       &none     &none     &none      &to 5      &kp N1    &kp LC(Z)  &kp LC(C)      &kp LC(V)    &kp LC(X)  &kp LC(LS(Z))       &none
-&kp DELETE  &kp LGUI  &kp LALT  &kp LSHFT  &kp LCTRL  &kp N2    &kp LEFT   &kp DOWN       &kp UP       &kp RIGHT  &kp K_CONTEXT_MENU  &kp BACKSPACE
-&none       &none     &none     &none      &none      &kp N3    &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &none               &none
-                                &none      &kp TAB    &mo 2     &none      &none          &none
+&none       &none          &none      &none      &to 5      &none        &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &none               &none
+&kp DELETE  &kp LGUI       &kp LALT   &kp LSHFT  &kp LCTRL  &none        &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &kp K_CONTEXT_MENU  &kp BACKSPACE
+&none       &kp LC(LS(Z))  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Z)    &kp N1    &kp N2         &kp N3       &kp N4     &kp N5              &kp N6
+                                      &none      &kp TAB    &mo 2        &none     &none          &none
             >;
 
             label = "Nav";
@@ -78,10 +78,10 @@
 
         number_layer {
             bindings = <
-&none  &kp N1  &kp N2  &kp N3  &kp N4     &kp N5    &kp N6        &kp N7  &kp N8      &kp N9  &kp N0           &none
-&none  &none   &none   &none   &kp SPACE  &none     &kp KP_PLUS   &kp N4  &kp N5      &kp N6  &kp KP_MULTIPLY  &kp BACKSPACE
-&none  &none   &none   &none   &none      &none     &kp KP_MINUS  &kp N1  &kp N2      &kp N3  &kp KP_DIVIDE    &none
-                       &none   &none      &none     &mo 1         &kp N0  &kp KP_DOT
+&none       &kp N1  &kp N2  &kp N3  &kp N4     &kp N5    &kp N6        &kp N7  &kp N8      &kp N9  &kp N0           &none
+&kp DELETE  &none   &none   &none   &kp SPACE  &none     &kp KP_PLUS   &kp N4  &kp N5      &kp N6  &kp KP_MULTIPLY  &kp BACKSPACE
+&none       &none   &none   &none   &none      &none     &kp KP_MINUS  &kp N1  &kp N2      &kp N3  &kp KP_DIVIDE    &none
+                            &none   &none      &none     &mo 1         &kp N0  &kp KP_DOT
             >;
 
             label = "Number";
@@ -89,10 +89,10 @@
 
         symbol_layer {
             bindings = <
-&none       &kp GRAVE        &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS          &kp PIPE         &kp CARET    &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOLLAR     &kp NON_US_BACKSLASH  &none
-&kp DELETE  &kp EXCLAMATION  &kp ASTERISK   &kp SLASH         &kp EQUAL          &kp AMPERSAND    &kp HASH     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON  &kp DOUBLE_QUOTES     &kp BACKSPACE
-&none       &kp TILDE        &kp PLUS       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT      &kp AT_SIGN  &kp COLON             &kp COMMA              &kp PERIOD     &kp SQT               &none
-                                            &none             &none              &none            &none        &none                 &none
+&none       &kp GRAVE        &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS          &kp PIPE         &kp CARET      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOLLAR     &kp NON_US_BACKSLASH  &none
+&kp DELETE  &kp EXCLAMATION  &kp ASTERISK   &kp SLASH         &kp EQUAL          &kp AMPERSAND    &kp HASH       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON  &kp DOUBLE_QUOTES     &kp BACKSPACE
+&none       &kp TILDE        &kp PLUS       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT      &kp AT_SIGN    &kp COLON             &kp COMMA              &kp PERIOD     &kp SQT               &none
+                                            &none             &none              &none            &kp BACKSPACE  &none                 &none
             >;
 
             label = "Symbol";
@@ -131,12 +131,5 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        active_symbol {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
