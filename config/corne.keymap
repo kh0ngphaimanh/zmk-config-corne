@@ -40,7 +40,16 @@
 
         to_base {
             bindings = <&to 0>;
-            key-positions = <36 41>;
+            key-positions = <38 39>;
+        };
+    };
+
+    macros {
+        capture_screen: capture_screen {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(S)) &to 5>;
+            label = "CAPTURE_SCREEN";
         };
     };
 
@@ -56,10 +65,10 @@
 
             display-name = "QWERTY";
             bindings = <
-&sl 4        &kp Q  &kp W  &kp E       &kp R        &kp T        &kp Y            &kp U               &kp I      &kp O    &kp P           &caps_word
-&key_repeat  &kp A  &kp S  &kp D       &kp F        &kp G        &kp H            &kp J               &kp K      &kp L    &kp UNDERSCORE  &key_repeat
-&sk LSHFT    &kp Z  &kp X  &kp C       &kp V        &kp B        &kp N            &kp M               &kp COMMA  &kp DOT  &kp FSLH        &sk RIGHT_SHIFT
-                           &kp DELETE  &lt 3 SPACE  &lt 2 TAB    &lt 1 BACKSPACE  &mt LEFT_WIN ENTER  &sk LCTRL
+&key_repeat  &kp Q  &kp W  &kp E  &kp R      &kp T          &kp Y            &kp U                &kp I      &kp O    &kp P           &key_repeat
+&sk LCTRL    &kp A  &kp S  &kp D  &kp F      &kp G          &kp H            &kp J                &kp K      &kp L    &kp UNDERSCORE  &caps_word
+&sk LSHFT    &kp Z  &kp X  &kp C  &kp V      &kp B          &kp N            &kp M                &kp COMMA  &kp DOT  &kp FSLH        &sk RIGHT_SHIFT
+                           &sl 4  &lt 1 TAB  &lt 2 SPACE    &lt 3 BACKSPACE  &mt LA(SPACE) ENTER  &to 5
             >;
 
             label = "QWERT";
@@ -67,10 +76,10 @@
 
         navigation_layer {
             bindings = <
-&none       &none          &none      &none      &to 5      &none        &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &none               &none
-&kp DELETE  &kp LGUI       &kp LALT   &kp LSHFT  &kp LCTRL  &none        &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &kp K_CONTEXT_MENU  &kp BACKSPACE
-&none       &kp LC(LS(Z))  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Z)    &kp N1    &kp N2         &kp N3       &kp N4     &kp N5              &kp N6
-                                      &none      &kp TAB    &mo 2        &none     &none          &none
+&none       &none      &none      &none      &none      &none            &kp N1    &kp N2         &kp N3     &kp N4     &kp N5              &none
+&kp DELETE  &sk LGUI   &sk LALT   &sk LSHFT  &sk LCTRL  &none            &kp LEFT  &kp DOWN       &kp UP     &kp RIGHT  &kp K_CONTEXT_MENU  &kp BACKSPACE
+&none       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(LS(Z))    &kp HOME  &kp PAGE_DOWN  &kp PG_UP  &kp END    &none               &none
+                                  &none      &none      &none            &kp TAB   &none          &none
             >;
 
             label = "Nav";
@@ -78,10 +87,10 @@
 
         number_layer {
             bindings = <
-&none       &kp N1  &kp N2  &kp N3  &kp N4     &kp N5    &kp N6        &kp N7  &kp N8      &kp N9  &kp N0           &none
-&kp DELETE  &none   &none   &none   &kp SPACE  &none     &kp KP_PLUS   &kp N4  &kp N5      &kp N6  &kp KP_MULTIPLY  &kp BACKSPACE
-&none       &none   &none   &none   &none      &none     &kp KP_MINUS  &kp N1  &kp N2      &kp N3  &kp KP_DIVIDE    &none
-                            &none   &none      &none     &mo 1         &kp N0  &kp KP_DOT
+&none       &kp N1  &kp N2  &kp N3    &kp N4     &kp N5       &kp N6        &kp N7  &kp N8      &kp N9  &kp N0           &none
+&kp DELETE  &none   &none   &kp LEFT  &kp RIGHT  &kp SPACE    &kp KP_PLUS   &kp N4  &kp N5      &kp N6  &kp KP_MULTIPLY  &kp BACKSPACE
+&none       &none   &none   &none     &none      &none        &kp KP_MINUS  &kp N1  &kp N2      &kp N3  &kp KP_DIVIDE    &none
+                            &none     &none      &none        &none         &kp N0  &kp KP_DOT
             >;
 
             label = "Number";
@@ -89,10 +98,10 @@
 
         symbol_layer {
             bindings = <
-&none       &kp GRAVE        &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS          &kp PIPE         &kp CARET      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOLLAR     &kp NON_US_BACKSLASH  &none
-&kp DELETE  &kp EXCLAMATION  &kp ASTERISK   &kp SLASH         &kp EQUAL          &kp AMPERSAND    &kp HASH       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON  &kp DOUBLE_QUOTES     &kp BACKSPACE
-&none       &kp TILDE        &kp PLUS       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT      &kp AT_SIGN    &kp COLON             &kp COMMA              &kp PERIOD     &kp SQT               &none
-                                            &none             &none              &none            &kp BACKSPACE  &none                 &none
+&none       &kp GRAVE        &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS          &kp PIPE         &kp CARET    &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOLLAR     &kp NON_US_BACKSLASH  &none
+&kp DELETE  &kp EXCLAMATION  &kp ASTERISK   &kp SLASH         &kp EQUAL          &kp AMPERSAND    &kp HASH     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON  &kp DOUBLE_QUOTES     &kp BACKSPACE
+&none       &kp TILDE        &kp PLUS       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT      &kp AT_SIGN  &kp COLON             &kp COMMA              &kp PERIOD     &kp SQT               &none
+                                            &none             &none              &none            &none        &none                 &none
             >;
 
             label = "Symbol";
@@ -100,10 +109,10 @@
 
         fucntion_layer {
             bindings = <
-&none     &none  &none           &to 6         &to 0             &kp LC(LG(S))      &kp F7      &kp F8           &kp F9        &kp F10               &kp F11               &kp F12
-&none     &none  &sk LALT        &sk LSHFT     &sk LCTRL         &kp PRINTSCREEN    &kp F1      &kp F2           &kp F3        &kp F4                &kp F5                &kp F6
-&kp CLCK  &none  &kp C_PREVIOUS  &kp C_NEXT    &kp C_PLAY_PAUSE  &kp K_MUTE         &kp K_MUTE  &kp C_VOLUME_UP  &kp C_VOL_DN  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &none
-                                 &bt BT_SEL 0  &bootloader       &bt BT_PRV         &bt BT_NXT  &bootloader      &bt BT_CLR
+&none         &none         &none           &none         &to 6             &capture_screen    &kp F7      &kp F8           &kp F9        &kp F10               &kp F11               &kp F12
+&kp CAPSLOCK  &sk LEFT_WIN  &sk LALT        &sk LSHFT     &sk LCTRL         &kp PRINTSCREEN    &kp F1      &kp F2           &kp F3        &kp F4                &kp F5                &kp F6
+&none         &kp LA(Z)     &kp C_PREVIOUS  &kp C_NEXT    &kp C_PLAY_PAUSE  &kp K_MUTE         &kp K_MUTE  &kp C_VOLUME_UP  &kp C_VOL_DN  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &none
+                                            &bt BT_SEL 0  &bootloader       &bt BT_PRV         &bt BT_NXT  &bootloader      &bt BT_CLR
             >;
 
             label = "Func";
@@ -111,9 +120,9 @@
 
         mouse_layer {
             bindings = <
-&none  &none  &none           &mmv MOVE_UP    &none            &none    &to 0           &none           &none         &none           &none  &none
-&none  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_LEFT  &none  &none
-&none  &none  &none           &none           &none            &none    &none           &none           &none         &none           &none  &none
+&none  &none  &none           &mmv MOVE_UP    &none            &none    &none           &msc SCRL_UP    &none            &none  &none  &none
+&none  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &none  &none  &none
+&none  &none  &none           &none           &none            &none    &none           &kp LC(V)       &kp LC(C)        &none  &none  &none
                               &none           &none            &none    &mkp RCLK       &mkp LCLK       &mkp MCLK
             >;
 
@@ -123,10 +132,10 @@
         colemakdh_layer {
             display-name = "Colemak";
             bindings = <
-&tog 4       &kp Q  &kp W  &kp F       &kp P      &kp B        &kp J            &kp L               &kp U      &kp Y    &kp UNDERSCORE  &caps_word
-&key_repeat  &kp A  &kp R  &kp S       &kp T      &kp G        &kp M            &kp N               &kp E      &kp I    &kp O           &key_repeat
-&sk LSHFT    &kp Z  &kp X  &kp C       &kp D      &kp V        &kp K            &kp H               &kp COMMA  &kp DOT  &kp FSLH        &sk RIGHT_SHIFT
-                           &kp DELETE  &kp SPACE  &lt 2 TAB    &lt 1 BACKSPACE  &mt LEFT_WIN ENTER  &sk LCTRL
+&key_repeat  &kp Q  &kp W  &kp F  &kp P      &kp B          &kp J            &kp L                &kp U      &kp Y    &kp UNDERSCORE  &caps_word
+&kp LCTRL    &kp A  &kp R  &kp S  &kp T      &kp G          &kp M            &kp N                &kp E      &kp I    &kp O           &caps_word
+&sk LSHFT    &kp Z  &kp X  &kp C  &kp D      &kp V          &kp K            &kp H                &kp COMMA  &kp DOT  &kp FSLH        &sk RIGHT_SHIFT
+                           &sl 4  &lt 1 TAB  &lt 2 SPACE    &lt 3 BACKSPACE  &mt LA(SPACE) ENTER  &to 5
             >;
         };
     };
