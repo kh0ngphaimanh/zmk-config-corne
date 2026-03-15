@@ -76,10 +76,10 @@
 
         navigation_layer {
             bindings = <
-&none       &none      &none      &none      &none      &none            &kp N1    &kp N2         &kp N3     &kp N4     &kp N5              &none
-&kp DELETE  &sk LGUI   &sk LALT   &sk LSHFT  &sk LCTRL  &none            &kp LEFT  &kp DOWN       &kp UP     &kp RIGHT  &kp K_CONTEXT_MENU  &kp BACKSPACE
-&none       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(LS(Z))    &kp HOME  &kp PAGE_DOWN  &kp PG_UP  &kp END    &none               &none
-                                  &none      &none      &none            &kp TAB   &none          &none
+&none       &none      &none      &none      &none      &none               &kp N1    &kp N2         &kp N3     &kp N4     &kp N5              &none
+&kp DELETE  &sk LGUI   &sk LALT   &sk LSHFT  &sk LCTRL  &kp LC(LEFT_WIN)    &kp LEFT  &kp DOWN       &kp UP     &kp RIGHT  &kp K_CONTEXT_MENU  &kp BACKSPACE
+&none       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(LS(Z))       &kp HOME  &kp PAGE_DOWN  &kp PG_UP  &kp END    &none               &none
+                                  &none      &none      &none               &kp TAB   &none          &none
             >;
 
             label = "Nav";
