@@ -65,10 +65,10 @@
 
             display-name = "QWERTY";
             bindings = <
-&key_repeat  &kp Q  &kp W  &kp E  &kp R      &kp T          &kp Y            &kp U                &kp I      &kp O    &kp P           &key_repeat
-&sk LCTRL    &kp A  &kp S  &kp D  &kp F      &kp G          &kp H            &kp J                &kp K      &kp L    &kp UNDERSCORE  &caps_word
-&sk LSHFT    &kp Z  &kp X  &kp C  &kp V      &kp B          &kp N            &kp M                &kp COMMA  &kp DOT  &kp FSLH        &sk RIGHT_SHIFT
-                           &sl 4  &lt 2 SPACE  &lt 1 TAB    &lt 3 BACKSPACE  &mt LA(SPACE) ENTER  &to 5
+&key_repeat  &kp Q  &kp W  &kp E       &kp R        &kp T        &kp Y                    &kp U        &kp I      &kp O    &kp P           &key_repeat
+&sl 4        &kp A  &kp S  &kp D       &kp F        &kp G        &kp H                    &kp J        &kp K      &kp L    &kp UNDERSCORE  &kp DEL
+&sk LSHFT    &kp Z  &kp X  &kp C       &kp V        &kp B        &kp N                    &kp M        &kp COMMA  &kp DOT  &kp FSLH        &sk RIGHT_SHIFT
+                           &caps_word  &lt 1 SPACE  &lt 2 TAB    &mt LA(SPACE) BACKSPACE  &lt 3 ENTER  &sk LCTRL
             >;
 
             label = "QWERT";
@@ -76,10 +76,10 @@
 
         navigation_layer {
             bindings = <
-&none       &none      &none      &none      &none      &none               &kp N1    &kp N2         &kp N3     &kp N4     &kp N5              &none
-&kp DELETE  &sk LGUI   &sk LALT   &sk LSHFT  &sk LCTRL  &kp LC(LEFT_WIN)    &kp LEFT  &kp DOWN       &kp UP     &kp RIGHT  &kp K_CONTEXT_MENU  &kp BACKSPACE
-&none       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(LS(Z))       &kp HOME  &kp PAGE_DOWN  &kp PG_UP  &kp END    &none               &none
-                                  &none      &none      &none               &kp TAB   &none          &none
+&none  &none      &none      &none      &none      &none               &kp N1         &kp N2         &kp N3     &kp N4     &kp N5              &none
+&none  &sk LGUI   &sk LALT   &sk LSHFT  &sk LCTRL  &kp LC(LEFT_WIN)    &kp LEFT       &kp DOWN       &kp UP     &kp RIGHT  &kp K_CONTEXT_MENU  &none
+&none  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(LS(Z))       &kp HOME       &kp PAGE_DOWN  &kp PG_UP  &kp END    &none               &none
+                             &none      &none      &none               &kp BACKSPACE  &kp TAB        &kp DEL
             >;
 
             label = "Nav";
@@ -87,10 +87,10 @@
 
         number_layer {
             bindings = <
-&none       &kp N1  &kp N2  &kp N3    &kp N4     &kp N5       &kp N6        &kp N7  &kp N8      &kp N9  &kp N0           &none
-&kp DELETE  &none   &none   &kp LEFT  &kp RIGHT  &kp SPACE    &kp KP_PLUS   &kp N4  &kp N5      &kp N6  &kp KP_MULTIPLY  &kp BACKSPACE
-&none       &none   &none   &none     &none      &none        &kp KP_MINUS  &kp N1  &kp N2      &kp N3  &kp KP_DIVIDE    &none
-                            &none     &none      &none        &none         &kp N0  &kp KP_DOT
+&none  &kp N1         &kp N2           &kp N3        &kp N4       &kp N5       &kp N6         &kp N7  &kp N8   &kp N9  &kp N0     &none
+&none  &none          &none            &kp LEFT      &kp RIGHT    &kp SPACE    &kp KP_COMMA   &kp N4  &kp N5   &kp N6  &kp ENTER  &none
+&none  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp KP_MINUS  &kp KP_PLUS  &none        &kp KP_DOT     &kp N1  &kp N2   &kp N3  &none      &none
+                                       &none         &none        &none        &kp BACKSPACE  &kp N0  &kp DEL
             >;
 
             label = "Number";
@@ -98,10 +98,10 @@
 
         symbol_layer {
             bindings = <
-&none       &kp GRAVE        &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS          &kp PIPE         &kp CARET    &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOLLAR     &kp NON_US_BACKSLASH  &none
-&kp DELETE  &kp EXCLAMATION  &kp ASTERISK   &kp SLASH         &kp EQUAL          &kp AMPERSAND    &kp HASH     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON  &kp DOUBLE_QUOTES     &kp BACKSPACE
-&none       &kp TILDE        &kp PLUS       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT      &kp AT_SIGN  &kp COLON             &kp COMMA              &kp PERIOD     &kp SQT               &none
-                                            &none             &none              &none            &none        &none                 &none
+&none  &kp GRAVE        &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS          &kp PIPE         &kp CARET    &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOLLAR     &kp NON_US_BACKSLASH  &none
+&none  &kp EXCLAMATION  &kp ASTERISK   &kp SLASH         &kp EQUAL          &kp AMPERSAND    &kp HASH     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON  &kp DOUBLE_QUOTES     &none
+&none  &kp TILDE        &kp PLUS       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT      &kp AT_SIGN  &kp COLON             &kp COMMA              &kp PERIOD     &kp SQT               &none
+                                       &none             &none              &none            &none        &none                 &none
             >;
 
             label = "Symbol";
@@ -109,10 +109,10 @@
 
         fucntion_layer {
             bindings = <
-&none         &none         &none           &none         &to 6             &capture_screen    &kp F7      &kp F8           &kp F9        &kp F10               &kp F11               &kp F12
-&kp CAPSLOCK  &sk LEFT_WIN  &sk LALT        &sk LSHFT     &sk LCTRL         &kp PRINTSCREEN    &kp F1      &kp F2           &kp F3        &kp F4                &kp F5                &kp F6
-&none         &kp LA(Z)     &kp C_PREVIOUS  &kp C_NEXT    &kp C_PLAY_PAUSE  &kp K_MUTE         &kp K_MUTE  &kp C_VOLUME_UP  &kp C_VOL_DN  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &none
-                                            &bt BT_SEL 0  &bootloader       &bt BT_PRV         &bt BT_NXT  &bootloader      &bt BT_CLR
+&kp F1  &kp F2        &kp F3          &kp F4        &kp F5            &kp F6             &kp F7           &kp F8           &kp F9        &kp F10               &kp F11               &kp F12
+&none   &sk LEFT_WIN  &sk LALT        &sk LSHFT     &sk LCTRL         &kp PRINTSCREEN    &capture_screen  &kp LA(Z)        &to 5         &to 6                 &none                 &none
+&none   &kp CLCK      &kp C_PREVIOUS  &kp C_NEXT    &kp C_PLAY_PAUSE  &kp K_MUTE         &kp K_MUTE       &kp C_VOLUME_UP  &kp C_VOL_DN  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &none
+                                      &bt BT_SEL 0  &bootloader       &bt BT_PRV         &bt BT_NXT       &bootloader      &bt BT_CLR
             >;
 
             label = "Func";
@@ -120,10 +120,10 @@
 
         mouse_layer {
             bindings = <
-&none  &none  &none           &mmv MOVE_UP    &none            &none    &none           &msc SCRL_UP    &none            &none  &none  &none
-&none  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &none  &none  &none
-&none  &none  &none           &none           &none            &none    &none           &kp LC(V)       &kp LC(C)        &none  &none  &none
-                              &none           &none            &none    &mkp RCLK       &mkp LCLK       &mkp MCLK
+&none  &none           &none           &mmv MOVE_UP    &msc SCRL_UP     &none              &none      &none      &none      &none  &none  &none
+&none  &msc SCRL_LEFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_RIGHT    &none      &kp LC(V)  &kp LC(C)  &none  &none  &none
+&none  &none           &none           &none           &msc SCRL_DOWN   &none              &none      &none      &none      &none  &none  &none
+                                       &none           &none            &none              &mkp RCLK  &mkp LCLK  &mkp MCLK
             >;
 
             label = "Mouse";
@@ -132,10 +132,10 @@
         colemakdh_layer {
             display-name = "Colemak";
             bindings = <
-&key_repeat  &kp Q  &kp W  &kp F  &kp P      &kp B          &kp J            &kp L                &kp U      &kp Y    &kp UNDERSCORE  &caps_word
-&kp LCTRL    &kp A  &kp R  &kp S  &kp T      &kp G          &kp M            &kp N                &kp E      &kp I    &kp O           &caps_word
-&sk LSHFT    &kp Z  &kp X  &kp C  &kp D      &kp V          &kp K            &kp H                &kp COMMA  &kp DOT  &kp FSLH        &sk RIGHT_SHIFT
-                           &sl 4  &lt 2 SPACE  &lt 1 TAB    &lt 3 BACKSPACE  &mt LA(SPACE) ENTER  &to 5
+&key_repeat  &kp Q  &kp W  &kp F       &kp P        &kp B        &kp J                    &kp L        &kp U      &kp Y    &kp UNDERSCORE  &key_repeat
+&sl 4        &kp A  &kp R  &kp S       &kp T        &kp G        &kp M                    &kp N        &kp E      &kp I    &kp O           &kp DEL
+&sk LSHFT    &kp Z  &kp X  &kp C       &kp D        &kp V        &kp K                    &kp H        &kp COMMA  &kp DOT  &kp FSLH        &sk RIGHT_SHIFT
+                           &caps_word  &lt 2 SPACE  &lt 1 TAB    &mt LA(SPACE) BACKSPACE  &lt 3 ENTER  &sk LCTRL
             >;
         };
     };
