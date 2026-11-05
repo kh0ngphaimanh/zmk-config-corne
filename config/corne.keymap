@@ -7,16 +7,42 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
 
-&mt {
-    quick-tap-ms = <150>;
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-};
+&mt { flavor = "tap-preferred"; };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        combo_esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <26 25>;
+        };
+    };
+
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+        };
+
+        td: tapdance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAPDANCE";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -30,10 +56,10 @@
 
             display-name = "qwert";
             bindings = <
-&tog 5          &kp Q           &kp W           &kp E             &kp R        &kp T        &kp Y            &kp U        &kp I             &kp O           &kp P                    &caps_word
-&key_repeat     &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F  &kp G        &kp H            &mt LCTRL J  &mt LEFT_SHIFT K  &mt LEFT_ALT L  &mt LEFT_GUI UNDERSCORE  &key_repeat
-&kp LC(DELETE)  &kp Z           &kp X           &kp C             &kp V        &kp B        &kp N            &kp M        &kp COMMA         &kp DOT         &kp FSLH                 &kp LC(BACKSPACE)
-                                                &kp DEL           &lt 3 SPACE  &lt 2 TAB    &lt 1 BACKSPACE  &lt 4 ENTER  &kp ESCAPE
+&none        &kp Q  &kp W  &kp E           &kp R           &kp T             &kp Y      &kp U           &kp I           &kp O    &kp P          &caps_word
+&key_repeat  &kp A  &kp S  &mt LEFT_ALT D  &mt LEFT_WIN F  &kp G             &kp H      &mt LEFT_WIN J  &mt LEFT_ALT K  &kp L    &kp SEMICOLON  &key_repeat
+&none        &kp Z  &kp X  &kp C           &kp V           &kp B             &kp N      &kp M           &kp COMMA       &kp DOT  &kp FSLH       &none
+                           &kp DEL         &kp SPACE       &sk LEFT_SHIFT    &sk LCTRL  &lt 4 ENTER     &kp ESCAPE
             >;
 
             label = "base";
@@ -81,17 +107,6 @@
             >;
 
             label = "func";
-        };
-
-        mouse_layer {
-            bindings = <
-&tog 5  &none  &none           &mmv MOVE_UP    &none            &none    &none      &none           &msc SCRL_UP    &none            &none  &none
-&none   &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none    &none      &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &none  &none
-&none   &none  &none           &none           &none            &none    &none      &none           &none           &none            &none  &none
-                               &none           &none            &none    &mkp RCLK  &mkp LCLK       &mkp MCLK
-            >;
-
-            label = "mouse";
         };
     };
 
